@@ -1,0 +1,78 @@
+:root {
+  /* indexes */
+  --z-index-above-modal: 1001;
+  --z-index-ant-modal: 1000;
+  --z-index-modal: 101;
+  --z-index-below-modal: 90;
+  --z-index-below-topnav: calc(var(--z-topnav) - 1);
+  --z-index-above-base: 2;
+  --z-index-base: 1;
+
+  /* design colors */
+  --color-border: var(--color-ink-t3);
+  --color-negative: var(--color-negative);
+  --color-positive: var(--color-positive-alt-l2);
+  --color-primary: var(--color-primary);
+  --color-text-light: var(--color-blue-c2);
+  --color-input-background: transparent;
+  --color-input-border: var(--color-blue-c2-t2);
+
+  /* design shadows */
+  --shadow-floating-lowest: 0 -1px 1px -1px var(--color-ink-t2),
+    0 2px 1px -1px var(--color-ink-t2), 0 0 1px 0 var(--color-ink-t3),
+    0 1px 3px 0 var(--color-ink-t3);
+  --shadow-floating-low: 0 -2px 2px -2px var(--color-ink-t2),
+    0 3px 2px -2px var(--color-ink-t2), 0 0 2px 0 var(--color-ink-t3),
+    0 2px 6px 0 var(--color-ink-t3);
+  --shadow-floating-medium: 0 -2px 3px -3px var(--color-ink-t2),
+    0 6px 3px -3px var(--color-ink-t2), 0 0 3px 0 var(--color-ink-t3),
+    0 3px 9px 0 var(--color-ink-t3);
+  --shadow-floating-high: 0 -2px 4px -4px var(--color-ink-t2),
+    0 8px 4px -4px var(--color-ink-t2), 0 0 4px 0 var(--color-ink-t3),
+    0 4px 12px 0 var(--color-ink-t3);
+  --shadow-floating-highest: 0 -2px 10px -10px var(--color-ink-t2),
+    0 20px 10px -10px var(--color-ink-t2), 0 0 10px 0 var(--color-ink-t3),
+    0 10px 30px 0 var(--color-ink-t3);
+  --radio-button-shadow: 0 15px 30px var(--color-blue-c2-t2);
+  --option-button-shadow: 0 5px 20px var(--color-blue-c2-d5-t4);
+
+  /* design fonts */
+  --font-family-body: "Poppins", -apple-system, "BlinkMacSystemFont",
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-title: "Rubik", -apple-system, "BlinkMacSystemFont",
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+
+  /* font sizes based on material ui */
+  --font-size-mammoth: 5rem; /* 80px */
+  --font-size-giant: 3.75rem; /* 60px */
+  --font-size-xhuge: 3rem; /* 48px */
+  --font-size-huge: 2.125rem; /* 34px */
+  --font-size-xlarge: 1.5rem; /* 24px */
+  --font-size-large: 1.25rem; /* 20px */
+  --font-size-normal: 1rem; /* 16px */
+  --font-size-small: 0.875rem; /* 14px */
+  --font-size-xsmall: 0.75rem; /* 12px */
+  --font-size-tiny: 0.625rem; /* 10px */
+  --font-family-display: var(--font-family-body);
+
+  /* design spacing */
+  --spacing-rem-tiny: calc(2 * var(--rem-unit));
+  --spacing-rem-section: calc(5 * var(--spacing-rem-huge));
+  --spacing-rem-page-content: calc(14 * var(--spacing-rem-xsmall));
+  --spacing-rem-page-content-small: calc(
+    var(--spacing-rem-small) + (3 * var(--spacing-rem-xhuge))
+  );
+
+  /* para length */
+  --para-narrow: 45ch; /* ~45-55 characters per line */
+  --para-ideal: 65ch; /* 65-75 characters (sweet spot) */
+  --para-wide: 80ch; /* Max recommended for readability */
+  --para-poetry: 35ch; /* Short lines for poetry/quotations */
+  --para-longform: 75ch; /* Academic/long-form content */
+
+  /* swiper overrides */
+  --swiper-pagination-bullet-inactive-color: var(--color-grey);
+  --swiper-pagination-bullet-inactive-opacity: 1;
+}

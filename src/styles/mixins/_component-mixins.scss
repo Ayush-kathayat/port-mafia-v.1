@@ -1,0 +1,73 @@
+// Button styles
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  @include media-reduced-motion {
+    transition: none;
+  }
+}
+
+@mixin button-primary {
+  @include button-base;
+  background-color: var(--ye-color-primary);
+  color: white;
+  
+  &:hover:not(:disabled) {
+    background-color: darken(var(--ye-color-primary), 10%);
+  }
+}
+
+@mixin button-secondary {
+  @include button-base;
+  background-color: transparent;
+  border: 1px solid var(--ye-color-border);
+  
+  &:hover:not(:disabled) {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+// Card styles
+@mixin card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: var(--ye-shadow-floating-low);
+  overflow: hidden;
+  
+  @include media-hover {
+    &:hover {
+      box-shadow: var(--ye-shadow-floating-medium);
+    }
+  }
+}
+
+// Form element styles
+@mixin input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--ye-color-input-border);
+  border-radius: 4px;
+  background-color: var(--ye-color-input-background);
+  transition: border-color 0.2s ease;
+  
+  &:focus {
+    outline: none;
+    border-color: var(--ye-color-primary);
+  }
+  
+  @include media-reduced-motion {
+    transition: none;
+  }
+}

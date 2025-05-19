@@ -1,0 +1,66 @@
+// Font size with responsive scaling
+@mixin font-size($size, $line-height: null) {
+  font-size: $size;
+  
+  @if $line-height {
+    line-height: $line-height;
+  }
+  
+  // Optional: Add responsive scaling
+  @include media-max-sm {
+    font-size: $size * 0.85;
+  }
+}
+
+// Typography presets
+@mixin heading-1 {
+  font-family: var(--ye-font-family-title);
+  font-size: var(--ye-font-size-huge);
+  font-weight: 700;
+  line-height: 1.2;
+  
+  @include media-min-md {
+    font-size: var(--ye-font-size-xhuge);
+  }
+  
+  @include media-min-xl {
+    font-size: var(--ye-font-size-giant);
+  }
+}
+
+@mixin heading-2 {
+  font-family: var(--ye-font-family-title);
+  font-size: var(--ye-font-size-xlarge);
+  font-weight: 600;
+  line-height: 1.3;
+  
+  @include media-min-md {
+    font-size: var(--ye-font-size-huge);
+  }
+}
+
+@mixin body-text {
+  font-family: var(--ye-font-family-body);
+  font-size: var(--ye-font-size-normal);
+  line-height: 1.6;
+}
+
+@mixin small-text {
+  font-family: var(--ye-font-family-body);
+  font-size: var(--ye-font-size-small);
+  line-height: 1.5;
+}
+
+// Text truncation
+@mixin truncate($lines: 1) {
+  @if $lines == 1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

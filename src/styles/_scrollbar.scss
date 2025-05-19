@@ -1,0 +1,26 @@
+// _scrollbar.scss
+.os-content {
+  max-height: 100vh;
+}
+
+.os-theme-dark.os-scrollbar-vertical
+  > .os-scrollbar-track
+  > .os-scrollbar-handle,
+.os-theme-light.os-scrollbar-vertical
+  > .os-scrollbar-track
+  > .os-scrollbar-handle {
+  min-height: 72px;
+}
+
+.os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle:focus,
+.os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle.active {
+  left: -6px;
+  width: 12px;
+}
+
+@media (--media-hover) {
+  .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle:hover {
+    left: -6px;
+    width: 12px;
+  }
+}

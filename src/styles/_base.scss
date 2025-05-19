@@ -1,0 +1,20 @@
+// _base.scss
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-canvas);
+}
+
+a {
+  text-decoration: none;
+  
+  @media screen and (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+  
+  @media (--media-max-sm) {
+    --section-spacing: 75px;
+  }
+}

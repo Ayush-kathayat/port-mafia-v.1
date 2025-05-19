@@ -1,0 +1,62 @@
+
+// Breakpoint Map
+$breakpoints: (
+  xs: 360px,
+  sm: 600px,
+  md: 960px,
+  lg: 1200px,
+  xl: 1440px,
+  xxl: 1920px
+);
+
+// Dynamic media query mixin
+@mixin breakpoint-up($size) {
+  @if map-has-key($breakpoints, $size) {
+    @media (min-width: map-get($breakpoints, $size)) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint '#{$size}' in $breakpoints map.";
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @if map-has-key($breakpoints, $size) {
+    @media (max-width: map-get($breakpoints, $size)) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint '#{$size}' in $breakpoints map.";
+  }
+}
+
+@mixin breakpoint-between($min, $max) {
+  @if map-has-key($breakpoints, $min) and map-has-key($breakpoints, $max) {
+    @media (min-width: map-get($breakpoints, $min)) and (max-width: map-get($breakpoints, $max)) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint in $breakpoints map.";
+  }
+}
+
+// Container width mixin
+@mixin container-width($padding: 20px) {
+  width: 100%;
+  padding-left: $padding;
+  padding-right: $padding;
+  margin-left: auto;
+  margin-right: auto;
+  
+  @include breakpoint-up(md) {
+    max-width: map-get($breakpoints, md) - 40px;
+  }
+  
+  @include breakpoint-up(lg) {
+    max-width: map-get($breakpoints, lg) - 80px;
+  }
+  
+  @include breakpoint-up(xl) {
+    max-width: map-get($breakpoints, xl) - 120px;
+  }
+}
