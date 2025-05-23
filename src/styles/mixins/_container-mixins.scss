@@ -1,0 +1,22 @@
+@use "sass:map";
+@use "./breakpoints-mixins" as *;
+
+@mixin container-width($padding: 20px) {
+  width: 100%;
+  padding-left: $padding;
+  padding-right: $padding;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include breakpoint-up(md) {
+    max-width: map.get($breakpoints, md) - 40px;
+  }
+
+  @include breakpoint-up(lg) {
+    max-width: map.get($breakpoints, lg) - 80px;
+  }
+
+  @include breakpoint-up(xl) {
+    max-width: map.get($breakpoints, xl) - 120px;
+  }
+}

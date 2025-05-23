@@ -1,0 +1,16 @@
+@use "sass:list";
+@use "./media-mixins" as *;
+
+@mixin transition($properties: all, $duration: 0.3s, $timing: ease) {
+  $transitions: ();
+
+  @each $property in $properties {
+    $transitions: list.append($transitions, #{$property} #{$duration} #{$timing}, $separator: comma);
+  }
+
+  transition: $transitions;
+
+  @include media-reduced-motion {
+    transition: none;
+  }
+}

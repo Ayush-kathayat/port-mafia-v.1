@@ -1,0 +1,6 @@
+@use "../styles/globals" as *;
+
+.navbar{
+  @include heading-1;
+  @include flex-center;
+}

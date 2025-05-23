@@ -1,10 +1,4 @@
-// main.scss
-@import "variables";
-@import "./mixins/media-mixins";
-@import "./mixins/typography-mixins";
-@import "./mixins/layout-mixins";
-@import "./mixins/component-mixins";
-@import "./mixins/animation-mixins";
-@import "base";
-@import "scrollbar";
-
+// main.scss (entry point for global styles)
+@use "./globals" as *;
+@use "base" as *;
+@use "scrollbar" as *;

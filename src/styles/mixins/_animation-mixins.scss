@@ -1,48 +1,33 @@
-// Transition mixin
-@mixin transition($properties: all, $duration: 0.3s, $timing: ease) {
-  $transitions: ();
-  
-  @each $property in $properties {
-    $transitions: append($transitions, $property $duration $timing, comma);
-  }
-  
-  transition: $transitions;
-  
-  @include media-reduced-motion {
-    transition: none;
-  }
-}
+@use "./media-mixins" as *;
 
-// Fade in animation
 @mixin fade-in($duration: 0.3s, $delay: 0s) {
   animation: fadeIn $duration ease $delay forwards;
-  
+
   @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
   }
-  
+
   @include media-reduced-motion {
     animation: none;
     opacity: 1;
   }
 }
 
-// Slide in animations
 @mixin slide-in-up($duration: 0.4s, $delay: 0s, $distance: 20px) {
   animation: slideInUp $duration ease $delay forwards;
-  
+
   @keyframes slideInUp {
     from {
       opacity: 0;
-      transform: translateY($distance);
+      transform: translateY(#{$distance});
     }
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
-  
+
   @include media-reduced-motion {
     animation: none;
     opacity: 1;
@@ -50,7 +35,6 @@
   }
 }
 
-// Staggered animations for lists
 @mixin staggered-animation($children-selector: 'li', $base-delay: 0.1s, $animation-name: 'fadeIn') {
   @for $i from 1 through 10 {
     #{$children-selector}:nth-child(#{$i}) {
